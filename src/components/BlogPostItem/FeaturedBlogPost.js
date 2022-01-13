@@ -69,8 +69,8 @@ const FeaturedBlogPost = ({ post }) => {
               alt={title}
               src={`/images/posts/${coverImage}`}
               width="800"
-              height="475"
-              objectFit="cover"
+              height="420"
+              objectFit="contain"
             />
           </Box>
         </a>
