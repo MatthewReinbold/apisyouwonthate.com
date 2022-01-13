@@ -18,7 +18,7 @@ Iterative development is a beautiful thing and a cornerstone of modern software 
 
 It is tough to get otherwise busy developers to spend their precious time creating code for an interface *the first time*. Imagine their excitement discovering their work was invalidated and that they could now re-implement what was previously working? Long story short, most don't. 
 
-### #7: "It's internal and on on-prem, so we don't need to worry about Auth for a V1." (Frank Kilcommins)
+### #7: "It's internal and on-prem, so we don't need to worry about Auth for a V1." (Frank Kilcommins)
 
 I get it; developers are under a deadline and looking for some way to jettison features later. However, relying on *implicit trust*, or clients doing the right thing because "they're one of us", is a no-no. In light of increasing security breaches, more companies are moving to a **zero trust** cybersecurity approach, continuously validating at every stage of the digital interaction. 
 
