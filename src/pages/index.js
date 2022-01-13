@@ -60,7 +60,7 @@ const IndexPage = ({ books, posts }) => {
             `grpc`,
           ]}
         />
-        <Stack>
+        <Stack spacing={6}>
           <Grid
             gridTemplateColumns={['1fr', '1fr', '1fr fit-content(130px)']}
             gap={4}
