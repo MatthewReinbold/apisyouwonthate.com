@@ -10,7 +10,7 @@ import { parseTag } from './tags';
 import mdxOptions from '../utils/mdxOptions';
 
 export async function getContentBySlug(slug, directory, type) {
-  const realSlug = slug.replace(/\.mdx$/, '');
+  const realSlug = slug.toLowerCase().replace(/\.mdx$/, '');
   const fullPath = join(directory, `${realSlug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
