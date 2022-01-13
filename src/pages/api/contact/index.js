@@ -1,4 +1,10 @@
-const axios = require('axios');
+const Airtable = require('airtable');
+const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
+  process.env.AIRTABLE_BASE_ID
+);
+
+// name of the table we use in Airtable for contact form
+const CONTACT_FORM_TABLE_NAME = 'contact-form';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -10,9 +16,9 @@ export default async function handler(req, res) {
   const { body } = req;
 
   const {
-    'contact-name': name,
-    'contact-info': contact,
-    comment: message,
+    'contact-name': Name,
+    'contact-info': Contact,
+    comment: Message,
     'bot-field': honeypot,
   } = body;
 
@@ -21,47 +27,18 @@ export default async function handler(req, res) {
     return;
   }
 
-  const sentMessageResponse = await axios({
-    method: 'POST',
-    url: process.env.CONTACT_FORM_SLACK_WEBHOOK_ADDRESS,
-    data: formatMessage(name, contact, message),
-  });
-
-  res.status(parseInt(sentMessageResponse.status)).send();
-}
-
-// created with block kit builder from slack https://app.slack.com/block-kit-builder
-const formatMessage = (name, contact, message) => ({
-  blocks: [
-    {
-      type: 'context',
-      elements: [
-        {
-          type: 'mrkdwn',
-          text: 'New Message Request from apisyouwonthate.com/ama:',
-        },
-      ],
-    },
-    {
-      type: 'section',
-      fields: [
-        {
-          type: 'mrkdwn',
-          text: `*Name:*\n${name}`,
-        },
-        {
-          type: 'mrkdwn',
-          text: `*Contact:*\n${contact}`,
-        },
-      ],
-    },
-    {
-      type: 'section',
-      text: {
-        type: 'plain_text',
-        text: message,
-        emoji: true,
+  try {
+    const result = await base(CONTACT_FORM_TABLE_NAME).create(
+      {
+        Name,
+        Contact,
+        Message,
+        Status: 'Todo',
       },
-    },
-  ],
-});
+      { typecast: true }
+    );
+    res.status(200).send({ message: 'Message sent. Thank you!' });
+  } catch (err) {
+    res.status(500).send({ err, message: 'Something went wrong' });
+  }
+}

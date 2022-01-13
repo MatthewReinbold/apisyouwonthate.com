@@ -5,22 +5,23 @@
   "version": "2.0.0",
   "author": "Mike Bifulco <mbifulco@live.com>",
   "dependencies": {
-    "@chakra-ui/react": "^1.7.3",
+    "@chakra-ui/react": "^1.7.4",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@next/bundle-analyzer": "^12.0.7",
-    "@next/mdx": "^12.0.7",
+    "@next/bundle-analyzer": "^12.0.8",
+    "@next/mdx": "^12.0.8",
+    "airtable": "^0.11.1",
     "axios": "^0.24.0",
     "date-fns": "^2.28.0",
     "fathom-client": "^3.2.0",
     "feed": "^4.2.2",
-    "framer-motion": "^5.5.5",
+    "framer-motion": "^5.6.0",
     "gray-matter": "^4.0.3",
     "is-valid-email": "^0.0.5",
     "mdx-embed": "^0.0.22",
-    "next": "^12.0.7",
+    "next": "^12.0.8",
     "next-mdx-remote": "^3.0.8",
-    "next-sitemap": "^1.6.203",
+    "next-sitemap": "^1.9.9",
     "node-mailjet": "^3.3.4",
     "pluralize": "^8.0.0",
     "prism-react-renderer": "^1.2.1",
@@ -31,15 +32,15 @@
     "rehype-img-size": "^0.0.1",
     "rehype-slug": "^5.0.1",
     "sharp": "^0.29.3",
-    "slugify": "^1.6.2",
-    "string-strip-html": "^9.1.4",
+    "slugify": "^1.6.5",
+    "string-strip-html": "^9.1.5",
     "turndown": "^7.1.1"
   },
   "devDependencies": {
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/mdx": "^1.6.22",
     "eslint": "8.6.0",
-    "eslint-config-next": "12.0.7"
+    "eslint-config-next": "12.0.8"
   },
   "keywords": [
     "apis"

@@ -65,7 +65,7 @@ export const generateRSSFeed = (posts) => {
       date: new Date(date),
     });
 
-    // this will be mikebifulco.com/rss.xml
+    // this will be apisyouwonthate.com/rss.xml
     fs.writeFileSync('public/rss.xml', feed.rss2());
   });
 };
