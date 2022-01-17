@@ -21,28 +21,27 @@ import {
 import PrismHighlight, { defaultProps } from 'prism-react-renderer';
 import prismTheme from 'prism-react-renderer/themes/nightOwl';
 
-const CustomHeading = ({ as, id, ...rest }) => {
+const CustomHeading = ({ as, children, id, ...rest }) => {
   if (id) {
     return (
-      <NextLink href={`#${id}`}>
-        <a>
-          <Heading
-            as={as}
-            id={id}
-            {...rest}
-            _hover={{
-              _before: {
-                content: '"#"',
-                fontSize: 'smaller',
-                color: 'green.700',
-                position: 'relative',
-                marginLeft: '-1.2ch',
-                paddingRight: '0.2ch',
-              },
-            }}
-          />
-        </a>
-      </NextLink>
+      <Heading
+        as={as}
+        id={id}
+        {...rest}
+        _hover={{
+          _after: {
+            content: '"#"',
+            fontSize: 'smaller',
+            color: 'green.700',
+            position: 'relative',
+            paddingRight: '0.5ch',
+          },
+        }}
+      >
+        <NextLink href={`#${id}`}>
+          <a>{children}</a>
+        </NextLink>
+      </Heading>
     );
   }
 
