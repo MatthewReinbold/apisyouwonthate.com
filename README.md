@@ -18,13 +18,15 @@ This site is built with Next.js and MDX/Markdown, and Chakra UI. It is hosted on
    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
    NEXT_PUBLIC_FATHOM_ID=
 
-   # the slack webhook we use for notifications from /ama
-   CONTACT_FORM_SLACK_WEBHOOK_ADDRESS=
 
    # mailjet API stuff, for the newsletter subscription form
    MAILJET_PUBLIC_KEY=
    MAILJET_SECRET_KEY=
    MAILJET_NEWSLETTER_LIST_ID=
+
+   # API key and base ID for airtable, which we use for our contact form
+   AIRTABLE_API_KEY=
+   AIRTABLE_BASE_ID=
    ```
 
    (fill in missing values to the right of each `=` with values from shopify)
